@@ -5,36 +5,34 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "contact_messages")
+@Table(name = "experience")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContactMessage {
+public class Experience {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String company;
 
     @Column(nullable = false)
-    private String email;
+    private String role;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
     @Column(nullable = false)
-    private String subject;
+    private String startDate;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String message;
+    private String endDate;
 
     @Column(nullable = false)
-    private LocalDateTime createdAt;
+    private boolean current = false;
 
-    @PrePersist
-    protected void onCreate(){
-        this.createdAt = LocalDateTime.now();
-    }
+    private String location;
+
 }

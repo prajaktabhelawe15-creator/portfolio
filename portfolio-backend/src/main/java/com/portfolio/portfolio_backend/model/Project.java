@@ -8,30 +8,26 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "contact_messages")
+@Table(name = "projects")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContactMessage {
-
+public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String title;
+    private String description;
+    private String techStack;
+    private String githubUrl;
+    private String liveUrl;
+    private String imageUrl;
 
     @Column(nullable = false)
-    private String name;
+    private boolean featured = false;
 
     @Column(nullable = false)
-    private String email;
-
-    @Column(nullable = false)
-    private String subject;
-
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String message;
-
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
+    LocalDateTime createdAt;
 
     @PrePersist
     protected void onCreate(){
