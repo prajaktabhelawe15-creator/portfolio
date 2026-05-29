@@ -1,0 +1,36 @@
+Step1: Spring Initializer:
+Maven
+Java
+Spring Boot 4.0.6
+Group: com.portfolio
+Artifact: portfolio-backend
+Package Name: __________________
+Packaging: Jar
+Config: properties
+Java: 21
+Dependencies:
+------------ 
+1. SPRING WEB: Adds Tomcat server + Spring MVC.
+            This is what enables @RestController, @GetMapping, @PostMapping.
+            When you run the app, an embedded Tomcat starts on port 8080 automatically.
+            No separate server installation needed — it's all bundled.
+2. SPRING DATA JPA: Adds Hibernate (ORM) + Spring Data repositories.
+            JPA = Java Persistence API (the standard).
+            Hibernate = the implementation that translates Java objects to SQL.
+            Spring Data = the layer that generates repository methods like findAll(), save().
+3. MYSQL DRIVER: The JDBC connector — the actual "cable"
+            between Java and MySQL. Spring Boot auto-configures the
+            DataSource (connection pool) using your application.properties config.
+4. LOMBOK: A code generation tool via Java annotations.
+            @Data generates: getters, setters, toString, equals, hashCode
+            @NoArgsConstructor generates: empty constructor
+            @AllArgsConstructor generates: constructor with all fields
+            @Builder generates: builder pattern
+            This eliminates hundreds of lines of boilerplate.
+
+Step2: Configure MySQL
+1. Create DB
+2. Configure it in application.properties
+-spring.datasource.url- tells Spring where MYSQL is running
+Format: jdbc:mysql://HOST:PORT/DATABASE_NAME?options
+localhost::
