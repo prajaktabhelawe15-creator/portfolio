@@ -20,8 +20,10 @@ public class Skill {
     private String name;
 
     @Column(nullable = false)
+    private String category;
+
+    @Column(nullable = false)
     private int proficiency;
 
     private String iconUrl;
-
 }

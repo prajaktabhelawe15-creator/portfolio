@@ -12,5 +12,5 @@ public class ErrorResponseDTO {
     private int status;
     private String message;
     private LocalDateTime timestamp;
-    private Map<String, String> errors;  // field-level validation errors
+    private Map<String, String> errors;
 }

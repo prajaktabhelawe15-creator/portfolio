@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class ExperienceRequestDTO {
+
     @NotBlank(message = "Company name is required")
     private String company;
 
@@ -15,11 +16,11 @@ public class ExperienceRequestDTO {
     private String description;
 
     @NotBlank(message = "Start date is required")
-    private String startDate;    // "Jan 2023"
+    private String startDate;
 
-    private String endDate;      // null if current job
+    private String endDate;
 
     private boolean current = false;
 
-    private String location;     // optional
+    private String location;
 }

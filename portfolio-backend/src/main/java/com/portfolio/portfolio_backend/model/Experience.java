@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "experience")
+@Table(name = "experiences")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,5 +34,4 @@ public class Experience {
     private boolean current = false;
 
     private String location;
-
 }
